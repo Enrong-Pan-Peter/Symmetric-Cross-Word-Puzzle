@@ -6,7 +6,7 @@ This project consists of two Java classes: `SymCross.java` and `Dictionary.java`
 
 ## Files
 
-### `Dictionary.java`
+### `Dictionary.java` in `src`
 
 The `Dictionary` class provides functionality to store and retrieve 4-letter words efficiently. The key features of this class include:
 
@@ -15,7 +15,7 @@ The `Dictionary` class provides functionality to store and retrieve 4-letter wor
 - Using an internal `ArrayList<String>` to store words in alphabetical order.
 - Using an `ArrayList<Integer>` to store indexes to optimize search performance.
 
-### `SymCross.java`
+### `SymCross.java` in `src`
 
 The `SymCross` class is responsible for generating 4x4 symmetric crossword puzzles. A symmetric crossword is a crossword where:
 
