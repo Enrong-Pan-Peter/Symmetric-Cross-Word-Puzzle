@@ -1,8 +1,8 @@
-package a3.crossword;
+package crossword;
 
 import java.util.ArrayList;
 
-import a3.dictionary.Dictionary;
+import dictionary.Dictionary;
 
 /**
  * A class for creating 4x4 symmetric crossword puzzles. A symmetric crossword

@@ -1,72 +1,109 @@
-# Symmetric-Cross-Word-Puzzle
+# Symmetric Crossword Puzzle Generator
+
+A web-based application that generates 4x4 symmetric crossword puzzles. This project is a JavaScript port of a Java application with the same functionality.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [How It Works](#how-it-works)
+- [Technologies Used](#technologies-used)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+- [Future Improvements](#future-improvements)
 
 ## Overview
 
-This project consists of two Java classes: `SymCross.java` and `Dictionary.java`. The purpose of the project is to generate 4x4 symmetric crossword puzzles using a dictionary of valid 4-letter English words found in the official Scrabble word list.
+This project implements a symmetric crossword puzzle generator. A symmetric crossword is a crossword where the word in row i is equal to the word in column i, where i = 0, 1, 2, 3 are the indexes of the rows and columns. Words of the puzzle are always in uppercase.
 
-## Files
+The application uses a dictionary of 4-letter English words found in the official Scrabble word list to generate valid crossword puzzles.
 
-### `Dictionary.java` in `src`
+## Features
 
-The `Dictionary` class provides functionality to store and retrieve 4-letter words efficiently. The key features of this class include:
+- Generate a crossword puzzle from a user-provided 4-letter word
+- Create random puzzles using words from the dictionary
+- Animated UI with a clean, modern design
+- Responsive layout that works on mobile and desktop devices
+- Input validation and error handling
+- Visual feedback during puzzle generation
 
-- Checking if a word exists in the dictionary.
-- Retrieving a list of all words that start with a given prefix (e.g., all words that start with "TH").
-- Using an internal `ArrayList<String>` to store words in alphabetical order.
-- Using an `ArrayList<Integer>` to store indexes to optimize search performance.
+## File Details
 
-### `SymCross.java` in `src`
+### index.html
+- Contains the HTML structure
+- Includes Tailwind CSS via CDN
+- Sets up the user interface with input field, buttons, and grid
 
-The `SymCross` class is responsible for generating 4x4 symmetric crossword puzzles. A symmetric crossword is a crossword where:
+### js/main.js
+- Manages UI interactions
+- Handles button clicks and user input
+- Displays the crossword grid
+- Shows status messages
 
-- The word in row `i` is equal to the word in column `i`, for `i = 0, 1, 2, 3`.
-- It systematically searches the dictionary to construct a valid crossword.
-- Implements a method `makeCrossword(String firstWord)` that builds the crossword given a starting word.
+### js/dictionary.js
+- Loads the word list from four.txt
+- Provides methods to search for words
+- Indexes words for efficient lookup
+
+### js/symCross.js
+- Implements the crossword generation algorithm
+- Creates and validates 4x4 symmetric puzzles
+- Ensures word symmetry across rows and columns
+
+### data/four.txt
+- Contains the list of valid 4-letter words
+- Used as the dictionary for the puzzle generator
+
+### SymCross.java
+- Original java code for symCross.js
+
+### Dictionary.java
+- Original java code for dictionary.js
+
+## How It Works
+
+### Dictionary Class
+
+The Dictionary class provides functionality to store and retrieve 4-letter words efficiently:
+- Loads the dictionary from a text file
+- Checks if a word exists in the dictionary
+- Retrieves a list of all words that start with a given prefix
+- Uses optimized indexing to speed up word lookups
+
+### SymCross Class
+
+The SymCross class is responsible for generating symmetric crossword puzzles:
+- Takes a starting word (first row of the puzzle)
+- Searches for compatible words that maintain the symmetry property
+- Builds a 4x4 grid where each row i and column i contain the same word
+
+### UI/UX
+
+- User enters a 4-letter word or clicks "Random"
+- Application validates the input and generates the puzzle
+- Crossword grid animates into view with each cell fading in sequentially
+- Status messages provide feedback on the generation process
+
+## Technologies Used
+
+- **JavaScript** - Core application logic
+- **HTML5** - Structure and content
+- **Tailwind CSS** - Styling and responsive design
+- **CSS Animations** - Enhanced user experience
+- **Fetch API** - Asynchronous dictionary loading
+
+## Setup and Installation
+
+1. Clone the repository: https://github.com/Enrong-Pan-Peter/Symmetric-Cross-Word-Puzzle.git
+3. Open the project in VS Code and use the Live Server extension to run the application.
+
+Alternatively, you can click on the link provided here to run it locally: https://somelink
 
 ## Usage
 
-1. **Compile the Java files:**
-
-   ```sh
-   javac Dictionary.java SymCross.java
-   ```
-
-2. **Run the program:**
-
-   ```sh
-   java SymCross
-   ```
-
-3. **Example usage:**
-
-   - Load the dictionary.
-   - Search for words starting with a prefix.
-   - Generate a symmetric crossword using a given starting word.
-
-## How it Works
-
-### Dictionary Operations
-
-- The `Dictionary` class reads words from a file and stores them in a list.
-- The `startsWith(String prefix)` method efficiently retrieves all words that match a given prefix.
-- The `readFile()` method loads words from an external source and initializes an index list for faster lookup.
-
-### Crossword Generation
-
-- The `makeCrossword` method starts with a given first word.
-- It recursively searches for words that satisfy the symmetric crossword constraints.
-- The crossword is built by ensuring that the words in rows match the words in columns at each index.
-
-## Future Improvements
-
-- Extend the dictionary to support words of different lengths.
-- Improve the efficiency of crossword generation.
-- Provide a graphical interface to visualize the crossword puzzles.
-
-## License
-
-This project is licensed under the MIT License.
-
-## Author
-
-Pan, Enrong
+1. Open the application in your browser.
+2. Enter a 4-letter word in the input field.
+3. Click "Generate" to create a crossword puzzle starting with your word.
+4. Alternatively, click "Random" to generate a puzzle with a randomly selected word.
+5. If the puzzle cannot be generated with the given word, an error message will appear.

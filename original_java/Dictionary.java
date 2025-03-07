@@ -1,4 +1,4 @@
-package a3.dictionary;
+package dictionary;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;

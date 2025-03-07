@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symmetric Crossword Puzzle</title>
+    <!-- Add Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+            <h1 class="text-3xl font-bold text-center text-indigo-700 mb-6">Symmetric Crossword Puzzle</h1>
+            
+            <div class="mb-6">
+                <div class="flex gap-3 mb-4">
+                    <input type="text" id="firstWord" placeholder="Enter a 4-letter word" maxlength="4" 
+                           class="flex-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent uppercase">
+                    <button id="generateBtn" 
+                            class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
+                        Generate
+                    </button>
+                    <button id="randomBtn" 
+                            class="px-4 py-2 bg-emerald-600 text-white rounded-lg shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-colors">
+                        Random
+                    </button>
+                </div>
+                
+                <div id="status" class="hidden px-4 py-3 rounded-lg mb-4"></div>
+            </div>
+            
+            <div class="mb-6">
+                <div id="crossword" class="grid grid-cols-4 gap-px bg-gray-800 w-full max-w-sm mx-auto aspect-square rounded-lg overflow-hidden"></div>
+            </div>
+
+            <div class="text-center text-gray-500 text-sm">
+                <p>Enter a 4-letter word to generate a symmetric crossword puzzle.</p>
+                <p>Each row and its corresponding column will contain the same word.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/dictionary.js"></script>
+    <script src="js/symCross.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
