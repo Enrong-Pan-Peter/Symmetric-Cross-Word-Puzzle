@@ -2,17 +2,6 @@
 
 A web-based application that generates 4x4 symmetric crossword puzzles. This project is a JavaScript port of a Java application with the same functionality.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [How It Works](#how-it-works)
-- [Technologies Used](#technologies-used)
-- [Setup and Installation](#setup-and-installation)
-- [Usage](#usage)
-- [Future Improvements](#future-improvements)
-
 ## Overview
 
 This project implements a symmetric crossword puzzle generator. A symmetric crossword is a crossword where the word in row i is equal to the word in column i, where i = 0, 1, 2, 3 are the indexes of the rows and columns. Words of the puzzle are always in uppercase.
@@ -55,10 +44,10 @@ The application uses a dictionary of 4-letter English words found in the officia
 - Contains the list of valid 4-letter words
 - Used as the dictionary for the puzzle generator
 
-### SymCross.java
+### original_java/SymCross.java
 - Original java code for symCross.js
 
-### Dictionary.java
+### original_java/Dictionary.java
 - Original java code for dictionary.js
 
 ## How It Works
@@ -93,17 +82,15 @@ The SymCross class is responsible for generating symmetric crossword puzzles:
 - **CSS Animations** - Enhanced user experience
 - **Fetch API** - Asynchronous dictionary loading
 
-## Setup and Installation
+## How to Use
 
 1. Clone the repository: https://github.com/Enrong-Pan-Peter/Symmetric-Cross-Word-Puzzle.git
-3. Open the project in VS Code and use the Live Server extension to run the application.
+2. Open the project in VS Code and use the Live Server extension to run the application.
 
 Alternatively, you can click on the link provided here to run it locally: https://somelink
 
-## Usage
-
-1. Open the application in your browser.
-2. Enter a 4-letter word in the input field.
-3. Click "Generate" to create a crossword puzzle starting with your word.
-4. Alternatively, click "Random" to generate a puzzle with a randomly selected word.
-5. If the puzzle cannot be generated with the given word, an error message will appear.
+3. Open the application in your browser.
+4. Enter a 4-letter word in the input field.
+5. Click "Generate" to create a crossword puzzle starting with your word.
+6. Alternatively, click "Random" to generate a puzzle with a randomly selected word.
+7. If the puzzle cannot be generated with the given word, an error message will appear.
